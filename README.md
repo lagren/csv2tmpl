@@ -18,7 +18,7 @@ Using csv2tmpl is easy. First, use `go get` to install the latest version:
 
 Use functions to convert values to another format. Supported functions:
 
-- String manipulation using `lower`, or `upper`
+- String manipulation using `lower`, `upper`, `kebab`, `snake`, or `camel`
 - Calculate hash sum using `md5`, `sha`, `sha256`, or `sha512` (hex output)
 
 Example template usage: `{{ upper .last_name }}` or `{{ .last_name | upper }}`

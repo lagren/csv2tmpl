@@ -8,6 +8,8 @@ import (
 	"encoding/hex"
 	"reflect"
 	"strings"
+
+	"github.com/iancoleman/strcase"
 )
 
 func toUpper(input reflect.Value) string {
@@ -21,6 +23,38 @@ func toUpper(input reflect.Value) string {
 func toLower(input reflect.Value) string {
 	if input.Kind() == reflect.String {
 		return strings.ToLower(input.String())
+	}
+
+	return ""
+}
+
+func toSnake(input reflect.Value) string {
+	if input.Kind() == reflect.String {
+		return strcase.ToSnake(input.String())
+	}
+
+	return ""
+}
+
+func toKebab(input reflect.Value) string {
+	if input.Kind() == reflect.String {
+		return strcase.ToKebab(input.String())
+	}
+
+	return ""
+}
+
+func toCamel(input reflect.Value) string {
+	if input.Kind() == reflect.String {
+		return strcase.ToCamel(input.String())
+	}
+
+	return ""
+}
+
+func toDelimited(delimiter reflect.Value, input reflect.Value) string {
+	if input.Kind() == reflect.String {
+		return strcase.ToDelimited(input.String(), delimiter.String()[0])
 	}
 
 	return ""

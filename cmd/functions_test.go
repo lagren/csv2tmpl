@@ -12,6 +12,11 @@ import (
 func TestStringFunctions(t *testing.T) {
 	testTempl(t, "upper", toUpper, "{{ upper . }}", "Foo", "FOO")
 	testTempl(t, "lower", toLower, "{{ lower . }}", "Foo", "foo")
+	testTempl(t, "kebab", toKebab, "{{ kebab . }}", "Foo bar", "foo-bar")
+	testTempl(t, "camel", toCamel, "{{ camel . }}", "Foo bar", "FooBar")
+	testTempl(t, "snake", toSnake, "{{ snake . }}", "Foo bar", "foo_bar")
+	testTempl(t, "delimited", toDelimited, `{{ delimited "." . }}`, "Foo bar", "foo.bar")
+	testTempl(t, "delimited", toDelimited, `{{ . | delimited "." }}`, "Foo bar", "foo.bar")
 }
 
 func TestHashFunctions(t *testing.T) {
