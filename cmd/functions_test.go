@@ -12,6 +12,10 @@ import (
 func TestStringFunctions(t *testing.T) {
 	testTempl(t, "upper", toUpper, "{{ upper . }}", "Foo", "FOO")
 	testTempl(t, "lower", toLower, "{{ lower . }}", "Foo", "foo")
+
+	testTempl(t, "suffix", toSuffix, `{{ suffix "-san" . }}`, "Foo", "Foo-san")
+	testTempl(t, "prefix", toPrefix, `{{ prefix "Mr " . }}`, "Foo", "Mr Foo")
+
 	testTempl(t, "kebab", toKebab, "{{ kebab . }}", "Foo bar", "foo-bar")
 	testTempl(t, "camel", toCamel, "{{ camel . }}", "Foo bar", "FooBar")
 	testTempl(t, "snake", toSnake, "{{ snake . }}", "Foo bar", "foo_bar")

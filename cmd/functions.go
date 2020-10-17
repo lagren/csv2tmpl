@@ -60,6 +60,22 @@ func toDelimited(delimiter reflect.Value, input reflect.Value) string {
 	return ""
 }
 
+func toPrefix(prefix reflect.Value, input reflect.Value) string {
+	if input.Kind() == reflect.String {
+		return prefix.String() + input.String()
+	}
+
+	return ""
+}
+
+func toSuffix(suffix reflect.Value, input reflect.Value) string {
+	if input.Kind() == reflect.String {
+		return input.String() + suffix.String()
+	}
+
+	return ""
+}
+
 func toMd5(input reflect.Value) string {
 	if input.Kind() == reflect.String {
 		h := md5.New()
