@@ -24,4 +24,4 @@ Use functions to convert values to another format. Supported functions:
 Example template usage:
 - `{{ upper .last_name }}` or `{{ .last_name | upper }}` outputs `SMITH`
 - `{{ prefix "Mr " .last_name }}` or `{{ .last_name | prefix "Mr " }}` outputs `Mr Smith`
-- `{{ suffix "-san " .last_name }}` or `{{ .last_name | suffix "-san " }}` output `Smith-san`
+- `{{ suffix "-san" .last_name }}` or `{{ .last_name | suffix "-san" }}` output `Smith-san`
