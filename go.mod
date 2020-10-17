@@ -1,4 +1,4 @@
-module csv2tmpl
+module github.com/lagren/csv2tmpl
 
 go 1.15
 
