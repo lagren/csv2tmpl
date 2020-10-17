@@ -1,7 +1,7 @@
 package main
 
 import (
-	"csv2tmpl/cmd"
+	"github.com/lagren/csv2tmpl/cmd"
 )
 
 func main() {
