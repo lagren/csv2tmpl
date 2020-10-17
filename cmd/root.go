@@ -4,12 +4,13 @@ import (
 	"bytes"
 	"encoding/csv"
 	"fmt"
-	"github.com/spf13/cobra"
 	"io"
 	"log"
 	"os"
 	"strings"
 	"text/template"
+
+	"github.com/spf13/cobra"
 )
 
 var inputFilename string
@@ -89,8 +90,9 @@ func getTemplate() *template.Template {
 	tmpl := template.New("tmpl")
 
 	tmpl = tmpl.Funcs(map[string]interface{}{
-		"upper": upper,
-		"lower": lower,
+		"upper": toUpper,
+		"lower": toLower,
+		"md5":   toMd5,
 	})
 
 	if templateString != "" {

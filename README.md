@@ -13,3 +13,13 @@ Use `csv2tmpl` to take a CSV file and convert to different output using template
 Using csv2tmpl is easy. First, use `go get` to install the latest version:
 
     go get -u github.com/lagren/csv2tmpl/csv2tmpl
+
+### Functions
+
+Use functions to convert values to another format. Supported functions:
+
+- Convert to lower case using `lower`
+- Convert to upper case using `upper`
+- Calculate MD5 sum (hex) using `md5`
+
+Example template usage: `{{ upper .last_name }}` or `{{ .last_name | upper }}`
