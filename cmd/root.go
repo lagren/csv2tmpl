@@ -90,9 +90,18 @@ func getTemplate() *template.Template {
 	tmpl := template.New("tmpl")
 
 	tmpl = tmpl.Funcs(map[string]interface{}{
-		"upper": toUpper,
-		"lower": toLower,
-		"md5":   toMd5,
+		"upper":     toUpper,
+		"lower":     toLower,
+		"snake":     toSnake,
+		"kebab":     toKebab,
+		"camel":     toCamel,
+		"delimited": toDelimited,
+		"prefix":    toPrefix,
+		"suffix":    toSuffix,
+		"md5":       toMd5,
+		"sha":       toSha,
+		"sha256":    toSha256,
+		"sha512":    toSha512,
 	})
 
 	if templateString != "" {
